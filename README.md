@@ -302,9 +302,9 @@ The `rating` column in the `recipes` dataframe is not missing at random (NMAR). 
 ### Missingness Dependency
 The first column that I will be analyzing for `average_rating` missingness is a column called `60_min_or_less`. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
 
-**Null Hypothesis:** The distribution of cooking time being 60 minutes or less when average rating is missing is the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+**Null Hypothesis:** The missingness of the `average_rating` column is not dependent on the `60_min_or_less` column.
 
-**Alternative Hypothesis:** The distribution of the cooking time being 60 minutes or less, when average rating is missing is not the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+**Alternative Hypothesis:** The missingness of the `average_rating` column is dependent on the `60_min_or_less` column.
 
 <iframe src="assets/missingness_min.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -312,8 +312,9 @@ The first column that I will be analyzing for `average_rating` missingness is a 
 
 The second column that I will be analyzing for the `average_rating` missingess is the `contributor_id`.
 
-**Null Hypothesis:** The distribution of `contributor_id`, when average rating is missing is the same as the distribution of `contributor_id` when the average rating is not missing.
-Alternative Hypothesis: The distribution of contributor_id, when average rating is missing is not the same as the distribution of contributor_id when the average rating is not missing.
+**Null Hypothesis:** The missingness of the `average_rating` column is not dependent on the `contributor_id` column.
+
+**Alternative Hypothesis:** The missingness of the `average_rating` column is dependent on the `contributor_id` column.
 
 <iframe src="assets/missingness_contributor.html" width=800 height=600 frameBorder=0></iframe>
 
