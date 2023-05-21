@@ -323,7 +323,7 @@ Test statistic: I chose to use the difference in group means test statistic to f
 
 Significance Level: I chose a significance level of 0.05 for my permutation test as it is the standard level to use in a permutation test.
 
-
+<iframe src="assets/permutation_test.html" width=800 height=600 frameBorder=0></iframe>
 
 Conclusion: The p-value from the permutation test is 0.108, which is greater than the significance level. This means that we fail to reject the null hypothesis. This means that observed difference in average rating for recipes that have a cooking time below and above 60 minutes is due to random chance.
 
