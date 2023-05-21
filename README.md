@@ -19,32 +19,35 @@ This is the first few rows of the cleaned recipes dataframe:
 |  4 | 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'preparation', 'main-dish', 'potatoes', 'vegetables', '4-hours-or-less', 'meatloaf', 'simply-potatoes2']                                                                                                                                             |        17 | ['pan fry bacon ', 'and set aside on a paper towel to absorb excess grease', 'mince yellow onion ', 'red bell pepper ', 'and add to your mixing bowl', 'chop garlic and set aside', 'put 1tbsp olive oil into a saut pan ', 'along with chopped garlic ', 'teaspoons white pepper and a pinch of kosher salt', 'bring to a medium heat to sweat your garlic', 'preheat oven to 350f', 'coarsely chop your baby spinach add to your heated pan ', 'stir frequently for approximately 5 min to wilt', 'add your spinach to the mixing bowl', 'chop your now cooled bacon ', 'and add it to the mixing bowl', 'add your meatloaf mix to the bowl ', 'with one egg and mix till thoroughly combined', 'add your goat cheese ', 'one egg ', '1 / 8 tsp white pepper and 1 / 8 tsp of kosher salt and mix till thoroughly combined', 'transfer to a 9x5 meatloaf pan ', 'and cook for 60 min or until the internal temperature is at least 160f', 'let stand for 5min', 'melt 1tbsp unsalted butter into a frying pan ', 'and cook up to three eggs at a time', 'crack each egg into a separate dish ', 'in order to prevent egg shells from reaching the pan ', 'then add salt and pepper to taste', 'wait until the egg whites are firm looking ', 'but slightly runny on top before flipping your eggs', 'after flipping ', 'wait 10~20 seconds before removing each egg and placing it over your slices of meatloaf'] | ready, set, cook! special edition contest entry: a mediterranean flavor inspired meatloaf dish. featuring: simply potatoes - shredded hash browns, egg, bacon, spinach, red bell pepper, and goat cheese.                                                                                                                                                                         | ['meatloaf mixture', 'unsmoked bacon', 'goat cheese', 'unsalted butter', 'eggs', 'baby spinach', 'yellow onion', 'red bell pepper', 'simply potatoes shredded hash browns', 'fresh garlic', 'kosher salt', 'white pepper', 'olive oil'] |              13 |                5 |          267   |                30 |            12 |             12 |              29 |                     48 |                     2 |
 
 ### Univariate Analysis
-Univariate Plot #1: Number of Ingredients For Each Recipe
+**Univariate Plot #1: Number of Ingredients For Each Recipe**
 
 This plot shows the distribution of the number of ingredients in dataframe. From the plot we can see that the median number of ingredients in the data is about 10 steps. The plot is slighlty skewed to the left and from the plot we can see that there is a high chance that the average number of steps is also around 10.
 
 <iframe src="assets/univariate_plot.html" width=800 height=600 frameBorder=0></iframe>
 
-Univariate Plot #2: Number of Steps For Each Recipe
+**Univariate Plot #2: Number of Steps For Each Recipe**
 
 This plot shows the emperical distributionof the number of steps in the `recipes` dataframe. From the plot we can see that the average number of steps in a recipe is aroumd 10 steps if we ignore the outliers. The data for this column seems to contain many outliers, since it shows a few of the recipes having over 60 steps, which could possibly be a mistake.
 
 <iframe src="assets/univariate_plot2.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
-Bivariate Plot #1: Effect of Protein on Number of Calories in the Recipe
+**Bivariate Plot #1: Effect of Protein on Number of Calories in the Recipe**
+
 This plot takes a look at how the protein level in a recipe affects the number of calories the recipe contains. From the graph below we can see that there is a positive correlation between the sugar levels and the number of calories present in a recipe.
 
 <iframe src="assets/bivariate_plot.html" width=800 height=600 frameBorder=0></iframe>
 
 
-Bivariate Plot #2: Effect of Sugar on Number of Calories in the Recipe
+**Bivariate Plot #2: Effect of Sugar on Number of Calories in the Recipe**
+
 This plot takes a look at how the sugar levels in a recipe affect the number of calories the recipe contains. From the graph below we can see that there is a positive correlation between the sugar levels and the number of calories present in a recipe.
 
 <iframe src="assets/bivariate_plot2.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Aggregation
 Aggregation of the number of steps in a recipe and its rating.
+
 This grouped table is significant because it shows that as the number of steps in a recipe increases, the rating of that recipe also increases. This table is significant because it shows that as the average rating of a recipe increases the number of steps in he recipe does not really vary. We can see the number of steps in a recipe does not have much of an effect on the rating that recipe recieves.
 
 |   average_rating |   count |     mean |   median |
@@ -299,31 +302,33 @@ The `rating` column in the `recipes` dataframe is not missing at random (NMAR). 
 ### Missingness Dependency
 The first column that I will be analyzing for `average_rating` missingness is a column called `60_min_or_less`. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
 
-Null Hypothesis: The distribution of cooking time being 60 minutes or less when average rating is missing is the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
-Alternative Hypothesis: The distribution of the cooking time being 60 minutes or less, when average rating is missing is not the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+**Null Hypothesis:** The distribution of cooking time being 60 minutes or less when average rating is missing is the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+
+**Alternative Hypothesis:** The distribution of the cooking time being 60 minutes or less, when average rating is missing is not the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
 
 <iframe src="assets/missingness_min.html" width=800 height=600 frameBorder=0></iframe>
 
-Conclusion: Because the p-value is greater than the cutoff of 5%, we fail to reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is not dependent on the `60_min_or_less` column.
+**Conclusion:** Because the p-value is greater than the cutoff of 5%, we fail to reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is not dependent on the `60_min_or_less` column.
 
 The second column that I will be analyzing for the `average_rating` missingess is the `contributor_id`.
 
-Null Hypothesis: The distribution of `contributor_id`, when average rating is missing is the same as the distribution of `contributor_id` when the average rating is not missing.
+**Null Hypothesis:** The distribution of `contributor_id`, when average rating is missing is the same as the distribution of `contributor_id` when the average rating is not missing.
 Alternative Hypothesis: The distribution of contributor_id, when average rating is missing is not the same as the distribution of contributor_id when the average rating is not missing.
 
 <iframe src="assets/missingness_contributor.html" width=800 height=600 frameBorder=0></iframe>
 
-Conclusion: Because the p-value is less than the cutoff of 5%, we reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is MAR dependent on the `contributor_id` column.
+**Conclusion:** Because the p-value is less than the cutoff of 5%, we reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is MAR dependent on the `contributor_id` column.
 
 ## Hypothesis Testing
-Null Hypothesis: From the recipes in the data, cooking times that are less than 60 minutes and that are over 60 minutes have the same distribution, and the observed differences in our sample our due to random chance. 
-Alternative Hypothesis: From the recipes in the data, recipes that have a cooking time of less than 60 minutes have lower average ratings than recipes with a cooking time of more than 60 minutes, on average. The observed difference in the sample cannot be explained by random chance alone.
+**Null Hypothesis:** From the recipes in the data, cooking times that are less than 60 minutes and that are over 60 minutes have the same distribution, and the observed differences in our sample our due to random chance. 
 
-Test statistic: I chose to use the difference in group means test statistic to find whether the average rating changes when the cooking time is longer. Because I have one categorical variable and one numerical variable find the difference in group means is the easiest test statistic to use for the permutation test.
+**Alternative Hypothesis:** From the recipes in the data, recipes that have a cooking time of less than 60 minutes have lower average ratings than recipes with a cooking time of more than 60 minutes, on average. The observed difference in the sample cannot be explained by random chance alone.
 
-Significance Level: I chose a significance level of 0.05 for my permutation test as it is the standard level to use in a permutation test.
+**Test statistic:** I chose to use the difference in group means test statistic to find whether the average rating changes when the cooking time is longer. Because I have one categorical variable and one numerical variable find the difference in group means is the easiest test statistic to use for the permutation test.
+
+**Significance Level:** I chose a significance level of 0.05 for my permutation test as it is the standard level to use in a permutation test.
 
 <iframe src="assets/permutation_test.html" width=800 height=600 frameBorder=0></iframe>
 
-Conclusion: The p-value from the permutation test is 0.108, which is greater than the significance level. This means that we fail to reject the null hypothesis. This means that observed difference in average rating for recipes that have a cooking time below and above 60 minutes is due to random chance.
+**Conclusion:** The p-value from the permutation test is 0.108, which is greater than the significance level. This means that we fail to reject the null hypothesis. This means that observed difference in average rating for recipes that have a cooking time below and above 60 minutes is due to random chance.
 
