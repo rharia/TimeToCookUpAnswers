@@ -29,9 +29,15 @@ Univariate Plot #2: Number of Steps For Each Recipe
 
 This plot shows the emperical distributionof the number of steps in the recipes dataframe. From the plot we can see that the average number of steps in a recipe is aroumd 10 steps if we ignore the outliers. The data for this column seems to contain many outliers, since it shows a few of the recipes having over 60 steps, which could possibly be a mistake.
 
-<iframe src="assets/univariate_plot.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/univariate_plot2.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Bivariate Analysis
 Bivariate Plot #1: Effect of Protein on Number of Calories in the Recipe
-
 This plot takes a look at how the protein level in a recipe affects the number of calories the recipe contains. From the graph below we can see that there is a positive correlation between the sugar levels and the number of calories present in a recipe.
+
+<iframe src="assets/bivariate_plot.html" width=800 height=600 frameBorder=0></iframe>
+
+Bivariate Plot #2: Effect of Sugar on Number of Calories in the Recipe
+This plot takes a look at how the sugar levels in a recipe affect the number of calories the recipe contains. From the graph below we can see that there is a positive correlation between the sugar levels and the number of calories present in a recipe.
+
+<iframe src="assets/bivariate_plot2.html" width=800 height=600 frameBorder=0></iframe>
