@@ -19,4 +19,19 @@ This is the first few rows of the cleaned recipes dataframe:
 |  4 | 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'preparation', 'main-dish', 'potatoes', 'vegetables', '4-hours-or-less', 'meatloaf', 'simply-potatoes2']                                                                                                                                             |        17 | ['pan fry bacon ', 'and set aside on a paper towel to absorb excess grease', 'mince yellow onion ', 'red bell pepper ', 'and add to your mixing bowl', 'chop garlic and set aside', 'put 1tbsp olive oil into a saut pan ', 'along with chopped garlic ', 'teaspoons white pepper and a pinch of kosher salt', 'bring to a medium heat to sweat your garlic', 'preheat oven to 350f', 'coarsely chop your baby spinach add to your heated pan ', 'stir frequently for approximately 5 min to wilt', 'add your spinach to the mixing bowl', 'chop your now cooled bacon ', 'and add it to the mixing bowl', 'add your meatloaf mix to the bowl ', 'with one egg and mix till thoroughly combined', 'add your goat cheese ', 'one egg ', '1 / 8 tsp white pepper and 1 / 8 tsp of kosher salt and mix till thoroughly combined', 'transfer to a 9x5 meatloaf pan ', 'and cook for 60 min or until the internal temperature is at least 160f', 'let stand for 5min', 'melt 1tbsp unsalted butter into a frying pan ', 'and cook up to three eggs at a time', 'crack each egg into a separate dish ', 'in order to prevent egg shells from reaching the pan ', 'then add salt and pepper to taste', 'wait until the egg whites are firm looking ', 'but slightly runny on top before flipping your eggs', 'after flipping ', 'wait 10~20 seconds before removing each egg and placing it over your slices of meatloaf'] | ready, set, cook! special edition contest entry: a mediterranean flavor inspired meatloaf dish. featuring: simply potatoes - shredded hash browns, egg, bacon, spinach, red bell pepper, and goat cheese.                                                                                                                                                                         | ['meatloaf mixture', 'unsmoked bacon', 'goat cheese', 'unsalted butter', 'eggs', 'baby spinach', 'yellow onion', 'red bell pepper', 'simply potatoes shredded hash browns', 'fresh garlic', 'kosher salt', 'white pepper', 'olive oil'] |              13 |                5 |          267   |                30 |            12 |             12 |              29 |                     48 |                     2 |
 
 ## Univariate Analysis
+Univariate Plot #1: Number of Ingredients For Each Recipe
+
+This plot shows the distribution of the number of ingredients in dataframe. From the plot we can see that the median number of infredients in the data is about 10 steps. The plot is slighlty skewed to the left adn from the plot we can see that there is a high chance that the average number of steps is also around 10.
+
 <iframe src="assets/univariate_plot.html" width=800 height=600 frameBorder=0></iframe>
+
+Univariate Plot #2: Number of Steps For Each Recipe
+
+This plot shows the emperical distributionof the number of steps in the recipes dataframe. From the plot we can see that the average number of steps in a recipe is aroumd 10 steps if we ignore the outliers. The data for this column seems to contain many outliers, since it shows a few of the recipes having over 60 steps, which could possibly be a mistake.
+
+<iframe src="assets/univariate_plot.html" width=800 height=600 frameBorder=0></iframe>
+
+## Bivariate Analysis
+Bivariate Plot #1: Effect of Protein on Number of Calories in the Recipe
+
+This plot takes a look at how the protein level in a recipe affects the number of calories the recipe contains. From the graph below we can see that there is a positive correlation between the sugar levels and the number of calories present in a recipe.
