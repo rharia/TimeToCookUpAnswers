@@ -313,4 +313,17 @@ Alternative Hypothesis: The distribution of contributor_id, when average rating 
 
 <iframe src="assets/missingness_contributor.html" width=800 height=600 frameBorder=0></iframe>
 
-Conclusion: Because the p-value is less than the cutoff of 5%, we reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is MAR on dependent on the `contributor_id` column.
+Conclusion: Because the p-value is less than the cutoff of 5%, we reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is MAR dependent on the `contributor_id` column.
+
+## Hypothesis Testing
+Null Hypothesis: From the recipes in the data, cooking times that are less than 60 minutes and that are over 60 minutes have the same distribution, and the observed differences in our sample our due to random chance. 
+Alternative Hypothesis: From the recipes in the data, recipes that have a cooking time of less than 60 minutes have lower average ratings than recipes with a cooking time of more than 60 minutes, on average. The observed difference in the sample cannot be explained by random chance alone.
+
+Test statistic: I chose to use the difference in group means test statistic to find whether the average rating changes when the cooking time is longer. Because I have one categorical variable and one numerical variable find the difference in group means is the easiest test statistic to use for the permutation test.
+
+Significance Level: I chose a significance level of 0.05 for my permutation test as it is the standard level to use in a permutation test.
+
+
+
+Conclusion: The p-value from the permutation test is 0.108, which is greater than the significance level. This means that we fail to reject the null hypothesis. This means that observed difference in average rating for recipes that have a cooking time below and above 60 minutes is due to random chance.
+
