@@ -297,11 +297,20 @@ This grouped table is significant because it shows that as the number of steps i
 The `rating` column in the `recipes` dataframe is not missing at random (NMAR). There are some recipes in the dataset that have not yet been rated causing the data for rating column to be missing. Since the chance that the rating for a recipe will be missing depends on the actual missing value, the values in the `rating` column are not missing at random. Any additional data that I might want to obtain are Boolean values stating if the recipe has been rated or not, which could explain the missingness, thereby making the column missing at random.
 
 ### Missingness Dependency
-The first column that I will be analyzing for `average_rating` missingness is a column called 60_min_or_less. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
+The first column that I will be analyzing for `average_rating` missingness is a column called `60_min_or_less`. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
 
 Null Hypothesis: The distribution of cooking time being 60 minutes or less when average rating is missing is the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+Alternative Hypothesis: The distribution of the cooking time being 60 minutes or less, when average rating is missing is not the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
+
+<iframe src="assets/missingness_min.html" width=800 height=600 frameBorder=0></iframe>
+
+Conclusion: Because the p-value is greater than the cutoff of 5%, we fail to reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is not dependent on the `60_min_or_less` column.
+
+The second column that I will be analyzing for the `average_rating` missingess is the `contributor_id`.
+
+Null Hypothesis: The distribution of `contributor_id`, when average rating is missing is the same as the distribution of `contributor_id` when the average rating is not missing.
 Alternative Hypothesis: The distribution of contributor_id, when average rating is missing is not the same as the distribution of contributor_id when the average rating is not missing.
 
+<iframe src="assets/missingness_contributor.html" width=800 height=600 frameBorder=0></iframe>
 
-
-Conclusion: Because the p-value is greater than the cutoff of 5%, we fail to reject the null hypothesis. We can conclude that the missingness of the average_rate column is not dependent on the 60_min_or_less column.
+Conclusion: Because the p-value is less than the cutoff of 5%, we reject the null hypothesis. We can conclude that the missingness of the `average_rating` column is MAR on dependent on the `contributor_id` column.
