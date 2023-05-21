@@ -6,7 +6,7 @@ I have chosen to work with the recipe and ratings dataset which contains informa
 
 ## Cleaning And EDA
 ### Cleaning
-First, I merged the recipe and the ratings datasets together into one dataframe. Then I calculated the average rating for each recipe using the groupby function and then I merged the data into the dataframe. In order to clean up the data I filled all the ratings of 0 with np.nan because having a rating of 0 means that the recipe has not yet been rated. In order to get an accurate average rating for each recipe, it is important to change the 0 values to null so that it does not affect the average rating of the recipe. Additionally, I cleaned up the nutrition colun by creating separate columns for all the values in the list. I added columns for calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates from the nutrition column. After separating the values from the nutrition column, I removed the nutrition column from the dataframe. Furthermore, for all the columns that contain a string list (tags, steps, and ingredients), I converted the type of the column to a list. I also removed the reviews column from the dataframe, since it would not be needed.
+First, I merged the `recipe` and the `ratings` datasets together into one dataframe. Then I calculated the average rating for each recipe using the groupby function and then I merged the data into the dataframe. In order to clean up the data I filled all the ratings of 0 with np.nan because having a rating of 0 means that the recipe has not yet been rated. In order to get an accurate average rating for each recipe, it is important to change the 0 values to null so that it does not affect the average rating of the recipe. Additionally, I cleaned up the `nutrition` colun by creating separate columns for all the values in the list. I added columns for calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates from the `nutrition` column. After separating the values from the nutrition column, I removed the nutrition column from the dataframe. Furthermore, for all the columns that contain a string list (`tags`, `steps`, and `ingredients`), I converted the type of the column to a list. I also removed the `reviews` column from the dataframe, since it would not be needed.
 
 This is the first few rows of the cleaned recipes dataframe: 
 
@@ -21,13 +21,13 @@ This is the first few rows of the cleaned recipes dataframe:
 ### Univariate Analysis
 Univariate Plot #1: Number of Ingredients For Each Recipe
 
-This plot shows the distribution of the number of ingredients in dataframe. From the plot we can see that the median number of infredients in the data is about 10 steps. The plot is slighlty skewed to the left adn from the plot we can see that there is a high chance that the average number of steps is also around 10.
+This plot shows the distribution of the number of ingredients in dataframe. From the plot we can see that the median number of ingredients in the data is about 10 steps. The plot is slighlty skewed to the left and from the plot we can see that there is a high chance that the average number of steps is also around 10.
 
 <iframe src="assets/univariate_plot.html" width=800 height=600 frameBorder=0></iframe>
 
 Univariate Plot #2: Number of Steps For Each Recipe
 
-This plot shows the emperical distributionof the number of steps in the recipes dataframe. From the plot we can see that the average number of steps in a recipe is aroumd 10 steps if we ignore the outliers. The data for this column seems to contain many outliers, since it shows a few of the recipes having over 60 steps, which could possibly be a mistake.
+This plot shows the emperical distributionof the number of steps in the `recipes` dataframe. From the plot we can see that the average number of steps in a recipe is aroumd 10 steps if we ignore the outliers. The data for this column seems to contain many outliers, since it shows a few of the recipes having over 60 steps, which could possibly be a mistake.
 
 <iframe src="assets/univariate_plot2.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -45,7 +45,7 @@ This plot takes a look at how the sugar levels in a recipe affect the number of 
 
 ### Aggregation
 Aggregation of the number of steps in a recipe and its rating.
-This grouped table is significant because it shows that as the number of steps in a recipe increases, the rating of that recipe also increases. This table is significant because it shows that as the average rating of a recipe increases the number of steps in he recipe does not really vary. We can see thnumber of steps in a recipe does not have much of an effect on the rating that recipe recieves.
+This grouped table is significant because it shows that as the number of steps in a recipe increases, the rating of that recipe also increases. This table is significant because it shows that as the average rating of a recipe increases the number of steps in he recipe does not really vary. We can see the number of steps in a recipe does not have much of an effect on the rating that recipe recieves.
 
 |   average_rating |   count |     mean |   median |
 |-----------------:|--------:|---------:|---------:|
@@ -294,10 +294,14 @@ This grouped table is significant because it shows that as the number of steps i
 ## Assessment of Missingness
 
 ### NMAR Analyiss
-The rating column in the recipes dataframe is not missing at random (NMAR). There are some recipes in the dataset that have not yet been rated causing the data for rating column to be missing. Since the chance that the rating for a recipe will be missing depends on the actual missing value, the values in the rating column are not missing at random. Any additional data that I might want to obtain are Boolean values stating if the recipe has been rated or not, which could explain the missingness, thereby making the column missing at random.
+The `rating` column in the `recipes` dataframe is not missing at random (NMAR). There are some recipes in the dataset that have not yet been rated causing the data for rating column to be missing. Since the chance that the rating for a recipe will be missing depends on the actual missing value, the values in the `rating` column are not missing at random. Any additional data that I might want to obtain are Boolean values stating if the recipe has been rated or not, which could explain the missingness, thereby making the column missing at random.
 
 ### Missingness Dependency
-The first column that I will be analyzing for 'average_rating' missingness is a column called 60_min_or_less. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
+The first column that I will be analyzing for `average_rating` missingness is a column called 60_min_or_less. This column contains boolean values that state whether or not the cooking time for a recipe is less than or equal to 60 minutes. 
 
 Null Hypothesis: The distribution of cooking time being 60 minutes or less when average rating is missing is the same as the distribution of the cooking time being 60 minutes or less when the average rating is not missing.
 Alternative Hypothesis: The distribution of contributor_id, when average rating is missing is not the same as the distribution of contributor_id when the average rating is not missing.
+
+
+
+Conclusion: Because the p-value is greater than the cutoff of 5%, we fail to reject the null hypothesis. We can conclude that the missingness of the average_rate column is not dependent on the 60_min_or_less column.
